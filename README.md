@@ -20,11 +20,11 @@ FUTURE VERSIONS
     
     # The database would approximately consist of the following table:
     
-      1. Tx                     
-           From                
-           To                  
-           Amount              
-           Block    
+      Table name: Tx                     
+                   From                
+                   To                  
+                   Amount              
+                   Block    
            
     # Balance would not be stored since it is not time and memmory consuming
     # and has a low probability of searching multiple times
