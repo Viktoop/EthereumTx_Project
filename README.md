@@ -1,4 +1,5 @@
 INTRO
+
     # This is the solution for the TraceLabs / OriginTrail task 
     # The web application is written in Python with Django framework
     # Used libraries: Pandas, Web3
