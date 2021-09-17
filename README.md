@@ -12,3 +12,21 @@ APP USAGE
     # Searching takes some time, do not refresh page.
 
     # Progress for each search can be seen in cmd/Terminal
+    
+FUTURE VERSIONS
+
+    # Add database to store data and speed up searches
+    # since the blockchain is immutable.
+    
+    # The database would approximately consist of the following table:
+    
+      1. Tx                     
+           From                
+           To                  
+           Amount              
+           Block    
+           
+    # Balance would not be stored since it is not time and memmory consuming
+    # and has a low probability of searching multiple times
+    
+           
