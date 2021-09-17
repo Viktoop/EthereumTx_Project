@@ -1,0 +1,79 @@
+<html>
+<head>
+  <title>Ethereum transaction info</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<style>
+body {
+    background-color: #141b2f;
+    font-family: Trebuchet MS;
+}
+img {
+    float:right
+}
+h1,h2,h3,label {
+    color: #767e9e;
+    font-family: Trebuchet MS;
+}
+.box{
+
+    gravity:center;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.f{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+</style>
+<body>
+    <div>
+        {% load static %}
+        <img src="{% static 'eth.svg' %}" width="15%">
+        <div style="padding-top:0.5%; padding-left: 1%">
+            <h3>
+                <a href="/">Transactions</a>
+                |
+                <a href="/balance">Balance</a>
+            </h3>
+        </div>
+    </div>
+
+    <div class="box">
+        <h1>Get all wallet transactions since block A</h1>
+        <div class="f">
+            <form action="" method="get">
+                {% csrf_token %}
+                <table style="width:80%">
+                <tr>
+                    <td><h3>Enter wallet address and block number:</h3>
+
+                    <input type="text" name="address_checksum"
+                           value="{{ current_wallet }}"
+                           required
+                           placeholder="Checksum address" style="width:60%"></td>
+                </tr>
+                <tr>
+                    <td><input type="number" name="block_number" placeholder="Block number" required>
+                    <input type="submit" value="Search" style="margin-left:10%"></td>
+                </tr>
+            </table>
+        </form>
+        </div>
+        <div>
+            {% if df%}
+                <h2><u>Results</u>:</h2>
+                {{df|safe}}
+            {% endif %}
+        </div>
+
+    </div>
+
+
+</body>
+</html>
